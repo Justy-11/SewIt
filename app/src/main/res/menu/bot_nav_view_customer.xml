@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/createNewReq"
+        android:icon="@drawable/ic_new_req"
+        android:title="@string/create_new_request" />
+
+    <item
+        android:id="@+id/acceptedReq"
+        android:icon="@drawable/ic_accepted_req"
+        android:title="@string/accepted_requests"/>
+
+    <item
+        android:id="@+id/orderStatus"
+        android:icon="@drawable/ic_order_status"
+        android:title="@string/order_status"/>
+
+    <item
+        android:id="@+id/moreItem"
+        android:icon="@drawable/ic_more"
+        android:title="@string/more"/>
+
+</menu>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:elevation="10dp"
+        android:padding="4dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/orderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/order_id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/getOrderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/orderID"
+            app:layout_constraintTop_toTopOf="@id/orderID"
+            app:layout_constraintBottom_toBottomOf="@id/orderID"/>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/status"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/orderID"
+            app:layout_constraintStart_toStartOf="@id/orderID"/>
+
+        <TextView
+            android:id="@+id/getStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/status"
+            app:layout_constraintTop_toTopOf="@id/status"
+            app:layout_constraintBottom_toBottomOf="@id/status"/>
+
+        <TextView
+            android:id="@+id/orderItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/item"
+            app:layout_constraintTop_toBottomOf="@id/status"
+            app:layout_constraintStart_toStartOf="@id/status"/>
+
+        <TextView
+            android:id="@+id/getOrderItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/orderItem"
+            app:layout_constraintTop_toTopOf="@id/orderItem"
+            app:layout_constraintBottom_toBottomOf="@id/orderItem"/>
+
+        <TextView
+            android:id="@+id/getTailorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tailorName"
+            app:layout_constraintTop_toTopOf="@id/tailorName"/>
+
+        <TextView
+            android:id="@+id/tailorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/tailor_"
+            app:layout_constraintEnd_toStartOf="@id/getTailorName"
+            app:layout_constraintTop_toTopOf="@id/orderItem"
+            app:layout_constraintBottom_toBottomOf="@id/orderItem"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

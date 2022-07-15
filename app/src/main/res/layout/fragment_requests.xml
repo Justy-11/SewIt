@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    android:background="@color/white"
+    tools:context=".RequestsFragment">
+
+    <include
+        android:id="@+id/toolBarNewReq"
+        layout="@layout/tool_bar_requests" />
+
+    <Button
+        android:id="@+id/filterBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/filter"
+        android:textSize="18sp"
+        android:elevation="10dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/toolBarNewReq"
+        app:drawableLeftCompat="@drawable/ic_filter"
+        android:drawablePadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/maxTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/max"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/distanceMaxTIL"
+        app:layout_constraintTop_toTopOf="@+id/distanceMaxTIL"
+        app:layout_constraintBottom_toBottomOf="@+id/distanceMaxTIL"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/distanceMaxTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/distance_text"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        app:layout_constraintTop_toTopOf="@+id/filterBTN"
+        app:layout_constraintBottom_toBottomOf="@+id/filterBTN"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputDistanceMax"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTailorReq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/distanceMaxTIL"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

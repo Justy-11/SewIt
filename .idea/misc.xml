@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/btn_bg.xml" value="0.199609375" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_accepted_req.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_add_image.xml" value="0.1680921052631579" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_alert_location.xml" value="0.26614583333333336" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_delete.xml" value="0.25052083333333336" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_delivery.xml" value="0.1680921052631579" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_email.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_filter.xml" value="0.1680921052631579" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_location.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_logout.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_man.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_man_2.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_more.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_new_req.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_new_requests.xml" value="0.1680921052631579" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_order_status.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_orders.xml" value="0.26614583333333336" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_person.xml" value="0.199609375" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_phone.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_security.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_settings.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_visibility.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/ic_visibility_off.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/image_view_border.xml" value="0.21837606837606838" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/input_bg.xml" value="0.199609375" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/drawable/text_view_ripple.xml" value="0.23657407407407408" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/font/lato_italic.xml" value="0.28020833333333334" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_account_details.xml" value="0.4" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_customer_request_details.xml" value="0.3598200899550225" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_finished_order_details.xml" value="0.12" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_forgot_password.xml" value="0.1875" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_maps.xml" value="0.18796296296296297" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_maps_show_location.xml" value="0.25" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_order_details.xml" value="0.4" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_order_status_details.xml" value="0.2" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_tailor.xml" value="0.2" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_tailor_requests_details.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/activity_update_body_measurements.xml" value="0.4" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/customer_accepted_req_item.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/finished_order_tem.xml" value="0.25" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_accepted_req.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_create_req.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_more_cust.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_more_tailor.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_order_status.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_orders.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_pending_orders.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_requests.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/layout_rating_dialog.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/order_status_item.xml" value="0.25" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tailor_orders_item.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tailor_req_item.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar.xml" value="0.1875" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_acc_details.xml" value="0.2222222222222222" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_accepted_req.xml" value="0.16216216216216217" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_create_req.xml" value="0.20512820512820512" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_more_cust.xml" value="0.16216216216216217" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_new_orders.xml" value="0.16216216216216217" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_order_details.xml" value="0.15789473684210525" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_order_status.xml" value="0.16216216216216217" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_pending_orders.xml" value="0.16216216216216217" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_requests.xml" value="0.16216216216216217" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_tailor_req_details.xml" value="0.25" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tool_bar_up_body_measurements.xml" value="0.2222222222222222" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/menu/bot_nav_view_customer.xml" value="0.24635416666666668" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/menu/bot_nav_view_tailor.xml" value="0.16216216216216217" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

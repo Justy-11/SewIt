@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        tools:context=".CustomerRequestDetails">
+
+        <include
+            android:id="@+id/toolBarReqDetails"
+            layout="@layout/tool_bar_tailor_req_details" />
+
+        <TextView
+            android:id="@+id/tvReqId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/request_id"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBarReqDetails" />
+
+        <TextView
+            android:id="@+id/tvGetReqId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvReqId"
+            app:layout_constraintStart_toEndOf="@+id/tvReqId"
+            app:layout_constraintTop_toTopOf="@+id/tvReqId" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/customer_name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvReqId"
+            app:layout_constraintTop_toBottomOf="@+id/tvReqId" />
+
+        <TextView
+            android:id="@+id/tvGetName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvName"
+            app:layout_constraintStart_toEndOf="@+id/tvName"
+            app:layout_constraintTop_toTopOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/tailor_name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvGetTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTo"
+            app:layout_constraintStart_toEndOf="@+id/tvTo"
+            app:layout_constraintTop_toTopOf="@+id/tvTo" />
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_distance"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvTo"
+            app:layout_constraintTop_toBottomOf="@+id/tvTo" />
+
+        <TextView
+            android:id="@+id/tvGetDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDistance"
+            app:layout_constraintStart_toEndOf="@+id/tvDistance"
+            app:layout_constraintTop_toTopOf="@+id/tvDistance" />
+
+        <TextView
+            android:id="@+id/tvKm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/km_text"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/tvGetDistance"
+            app:layout_constraintTop_toTopOf="@id/tvGetDistance"
+            app:layout_constraintBottom_toBottomOf="@id/tvGetDistance"/>
+
+        <TextView
+            android:id="@+id/tvContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/contact_number"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvDistance"
+            app:layout_constraintTop_toBottomOf="@+id/tvDistance" />
+
+        <TextView
+            android:id="@+id/tvGetContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvContact"
+            app:layout_constraintStart_toEndOf="@+id/tvContact"
+            app:layout_constraintTop_toTopOf="@+id/tvContact" />
+
+        <TextView
+            android:id="@+id/tvGender1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/_gender"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvContact"
+            app:layout_constraintTop_toBottomOf="@+id/tvContact" />
+
+        <TextView
+            android:id="@+id/tvGetGender1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvGender1"
+            app:layout_constraintStart_toEndOf="@+id/tvGender1"
+            app:layout_constraintTop_toTopOf="@+id/tvGender1" />
+
+        <TextView
+            android:id="@+id/tvRequestedItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/requested_item"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvGender1"
+            app:layout_constraintTop_toBottomOf="@+id/tvGender1" />
+
+        <TextView
+            android:id="@+id/tvGetRequestedItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRequestedItem"
+            app:layout_constraintStart_toEndOf="@+id/tvRequestedItem"
+            app:layout_constraintTop_toTopOf="@+id/tvRequestedItem" />
+
+        <TextView
+            android:id="@+id/tvReqBodyMeasurements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_body_measurements"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvRequestedItem"
+            app:layout_constraintTop_toBottomOf="@+id/tvRequestedItem" />
+
+        <TextView
+            android:id="@+id/tvNeckSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_neck"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tvReqBodyMeasurements"
+            app:layout_constraintTop_toBottomOf="@+id/tvReqBodyMeasurements" />
+
+        <TextView
+            android:id="@+id/tvGetNeckSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNeckSize"
+            app:layout_constraintStart_toEndOf="@+id/tvNeckSize"
+            app:layout_constraintTop_toTopOf="@+id/tvNeckSize" />
+
+        <TextView
+            android:id="@+id/tvShoulder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_shoulder"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvNeckSize"
+            app:layout_constraintTop_toBottomOf="@+id/tvNeckSize" />
+
+        <TextView
+            android:id="@+id/tvGetShoulder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvShoulder"
+            app:layout_constraintStart_toEndOf="@+id/tvShoulder"
+            app:layout_constraintTop_toTopOf="@+id/tvShoulder" />
+
+        <TextView
+            android:id="@+id/tvSleeve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_sleeve"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvShoulder"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoulder" />
+
+        <TextView
+            android:id="@+id/tvGetSleeve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSleeve"
+            app:layout_constraintStart_toEndOf="@+id/tvSleeve"
+            app:layout_constraintTop_toTopOf="@+id/tvSleeve" />
+
+        <TextView
+            android:id="@+id/tvChest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_chest"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvSleeve"
+            app:layout_constraintTop_toBottomOf="@+id/tvSleeve" />
+
+        <TextView
+            android:id="@+id/tvGetChest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvChest"
+            app:layout_constraintStart_toEndOf="@+id/tvChest"
+            app:layout_constraintTop_toTopOf="@+id/tvChest" />
+
+        <TextView
+            android:id="@+id/tvWaist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_waist"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvChest"
+            app:layout_constraintTop_toBottomOf="@+id/tvChest" />
+
+        <TextView
+            android:id="@+id/tvGetWaist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWaist"
+            app:layout_constraintStart_toEndOf="@+id/tvWaist"
+            app:layout_constraintTop_toTopOf="@+id/tvWaist" />
+
+        <TextView
+            android:id="@+id/tvHip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_hip"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvWaist"
+            app:layout_constraintTop_toBottomOf="@+id/tvWaist" />
+
+        <TextView
+            android:id="@+id/tvGetHip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHip"
+            app:layout_constraintStart_toEndOf="@+id/tvHip"
+            app:layout_constraintTop_toTopOf="@+id/tvHip" />
+
+        <TextView
+            android:id="@+id/tvCenterBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_center_back"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvHip"
+            app:layout_constraintTop_toBottomOf="@+id/tvHip" />
+
+        <TextView
+            android:id="@+id/tvGetCenterBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCenterBack"
+            app:layout_constraintStart_toEndOf="@+id/tvCenterBack"
+            app:layout_constraintTop_toTopOf="@+id/tvCenterBack" />
+
+        <TextView
+            android:id="@+id/tvCrotch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_crotch"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvCenterBack"
+            app:layout_constraintTop_toBottomOf="@+id/tvCenterBack" />
+
+        <TextView
+            android:id="@+id/tvGetCrotch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCrotch"
+            app:layout_constraintStart_toEndOf="@+id/tvCrotch"
+            app:layout_constraintTop_toTopOf="@+id/tvCrotch" />
+
+        <TextView
+            android:id="@+id/tvCalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_calf"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvCrotch"
+            app:layout_constraintTop_toBottomOf="@+id/tvCrotch" />
+
+        <TextView
+            android:id="@+id/tvGetCalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCalf"
+            app:layout_constraintStart_toEndOf="@+id/tvCalf"
+            app:layout_constraintTop_toTopOf="@+id/tvCalf" />
+
+        <TextView
+            android:id="@+id/tvWrist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_wrist"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvCalf"
+            app:layout_constraintTop_toBottomOf="@+id/tvCalf" />
+
+        <TextView
+            android:id="@+id/tvGetWrist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWrist"
+            app:layout_constraintStart_toEndOf="@+id/tvWrist"
+            app:layout_constraintTop_toTopOf="@+id/tvWrist" />
+
+        <TextView
+            android:id="@+id/tvInseam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_inseam"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvWrist"
+            app:layout_constraintTop_toBottomOf="@+id/tvWrist" />
+
+        <TextView
+            android:id="@+id/tvGetInseam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvInseam"
+            app:layout_constraintStart_toEndOf="@+id/tvInseam"
+            app:layout_constraintTop_toTopOf="@+id/tvInseam" />
+
+        <TextView
+            android:id="@+id/tvOutSeam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/req_out_seam"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvInseam"
+            app:layout_constraintTop_toBottomOf="@+id/tvInseam" />
+
+        <TextView
+            android:id="@+id/tvGetOutSeam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOutSeam"
+            app:layout_constraintStart_toEndOf="@+id/tvOutSeam"
+            app:layout_constraintTop_toTopOf="@+id/tvOutSeam" />
+
+        <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/note"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvReqBodyMeasurements"
+            app:layout_constraintTop_toBottomOf="@+id/tvOutSeam" />
+
+        <TextView
+            android:id="@+id/tvGetNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvNote" />
+
+        <TextView
+            android:id="@+id/tvPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/photo"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvNote"
+            app:layout_constraintTop_toBottomOf="@+id/tvGetNote" />
+
+        <ImageView
+            android:id="@+id/tvGetPhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/image_view_border"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@id/tvPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoto"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvCreated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/created"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvPhoto"
+            app:layout_constraintTop_toBottomOf="@id/tvGetPhoto" />
+
+        <TextView
+            android:id="@+id/tvGetCreated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvCreated"
+            app:layout_constraintTop_toBottomOf="@+id/tvCreated" />
+
+        <TextView
+            android:id="@+id/tvAccepted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/accepted_at"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvGetCreated"
+            app:layout_constraintTop_toBottomOf="@id/tvGetCreated" />
+
+        <TextView
+            android:id="@+id/tvGetAccepted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvAccepted"
+            app:layout_constraintTop_toBottomOf="@+id/tvAccepted" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/price_col"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvGetAccepted"
+            app:layout_constraintTop_toBottomOf="@id/tvGetAccepted" />
+
+        <TextView
+            android:id="@+id/tvGetPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLatTIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="60dp"
+            android:hint="@string/lat"
+            app:boxStrokeColor="@color/teal_200"
+            app:hintTextColor="@color/hintGrey"
+            app:layout_constraintEnd_toEndOf="@+id/tvPrice"
+            app:layout_constraintStart_toStartOf="@+id/tvPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrice">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputLat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:inputType="numberDecimal"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLngTIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="60dp"
+            android:hint="@string/lng"
+            app:boxStrokeColor="@color/teal_200"
+            app:hintTextColor="@color/hintGrey"
+            app:layout_constraintEnd_toEndOf="@+id/inputLatTIL"
+            app:layout_constraintStart_toStartOf="@+id/inputLatTIL"
+            app:layout_constraintTop_toBottomOf="@+id/inputLatTIL">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputLng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:inputType="numberDecimal"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnAddLocationAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="8dp"
+            android:text="@string/add_location"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvPrice"
+            app:layout_constraintTop_toBottomOf="@+id/inputLngTIL" />
+
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_bg"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/place_order"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddLocationAddress"
+            app:layout_constraintStart_toStartOf="@id/btnAddLocationAddress"/>
+
+
+        <TextView
+            android:id="@+id/tvGetTailorID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lato_italic_regular"
+            android:text="@string/null_data"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/btnAccept"
+            app:layout_constraintStart_toStartOf="@id/btnAccept" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

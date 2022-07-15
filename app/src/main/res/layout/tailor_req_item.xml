@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:elevation="10dp"
+        android:padding="4dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/TailorReqID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/request_id"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/getTailorReqID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintStart_toEndOf="@id/TailorReqID"
+            app:layout_constraintTop_toTopOf="@id/TailorReqID"
+            app:layout_constraintBottom_toBottomOf="@id/TailorReqID"/>
+
+        <TextView
+            android:id="@+id/TailorReqItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/item"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintTop_toBottomOf="@id/TailorReqDistance"
+            app:layout_constraintStart_toStartOf="@id/TailorReqDistance"/>
+
+        <TextView
+            android:id="@+id/getTailorReqItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintStart_toEndOf="@id/TailorReqItem"
+            app:layout_constraintTop_toTopOf="@id/TailorReqItem"
+            app:layout_constraintBottom_toBottomOf="@id/TailorReqItem"/>
+
+        <TextView
+            android:id="@+id/getTailorReqFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/TailorReqFrom"
+            app:layout_constraintTop_toTopOf="@id/TailorReqFrom"/>
+
+        <TextView
+            android:id="@+id/TailorReqFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/from"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintEnd_toStartOf="@id/getTailorReqFrom"
+            app:layout_constraintTop_toTopOf="@id/TailorReqItem"
+            app:layout_constraintBottom_toBottomOf="@id/TailorReqItem"/>
+
+        <TextView
+            android:id="@+id/TailorReqDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/distance"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintTop_toBottomOf="@+id/TailorReqID"
+            app:layout_constraintStart_toStartOf="@+id/TailorReqID"/>
+
+        <TextView
+            android:id="@+id/getTailorReqDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintStart_toEndOf="@+id/TailorReqDistance"
+            app:layout_constraintTop_toTopOf="@id/TailorReqDistance"
+            app:layout_constraintBottom_toBottomOf="@id/TailorReqDistance"/>
+
+        <TextView
+            android:id="@+id/kmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/km_text"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintStart_toEndOf="@id/getTailorReqDistance"
+            app:layout_constraintTop_toTopOf="@id/getTailorReqDistance"
+            app:layout_constraintBottom_toBottomOf="@id/getTailorReqDistance"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

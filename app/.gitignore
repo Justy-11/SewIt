@@ -1,0 +1,8 @@
+/build
+
+*.iml
+*.idea/
+local.properties
+keys.xml
+google_maps_api.xml
+google-services.json

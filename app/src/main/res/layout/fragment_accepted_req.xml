@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    android:background="@color/white"
+    tools:context=".AcceptedReqFragment">
+
+    <include
+        android:id="@+id/toolBarAcceptedReq"
+        layout="@layout/tool_bar_accepted_req" />
+    <RadioGroup
+        android:id="@+id/radioGrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/maxDistTV"
+        app:layout_constraintTop_toTopOf="@+id/distanceMaxTIL">
+
+        <RadioButton
+            android:id="@+id/radio_dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/distance_text"
+            android:textColor="@color/white"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radio_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price_text"
+            android:textColor="@color/white"
+            android:layout_marginTop="12dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/filterBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/white"
+        android:drawablePadding="8dp"
+        android:elevation="10dp"
+        android:text="@string/filter"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:drawableLeftCompat="@drawable/ic_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/priceMaxTIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/priceMaxTIL" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/distanceMaxTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/distance_text"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarAcceptedReq"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputDistanceMax"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/priceMaxTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="@string/price_text"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        app:layout_constraintStart_toStartOf="@+id/distanceMaxTIL"
+        app:layout_constraintTop_toBottomOf="@+id/distanceMaxTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPriceMax"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/maxDistTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/max"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/distanceMaxTIL"
+        app:layout_constraintStart_toEndOf="@+id/distanceMaxTIL" />
+
+    <TextView
+        android:id="@+id/maxPrTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/max"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/priceMaxTIL"
+        app:layout_constraintStart_toEndOf="@+id/priceMaxTIL" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAcceptedReq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/filterBTN"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

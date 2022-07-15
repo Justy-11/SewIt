@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:elevation="10dp"
+        android:padding="4dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/CustomerAcceptedReqID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/request_id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/getCustomerAcceptedReqID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/CustomerAcceptedReqID"
+            app:layout_constraintTop_toTopOf="@id/CustomerAcceptedReqID"
+            app:layout_constraintBottom_toBottomOf="@id/CustomerAcceptedReqID"/>
+
+        <TextView
+            android:id="@+id/CustomerAcceptedReqDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/distance"
+            app:layout_constraintTop_toBottomOf="@id/CustomerAcceptedReqID"
+            app:layout_constraintStart_toStartOf="@id/CustomerAcceptedReqID"
+            />
+
+        <TextView
+            android:id="@+id/getCustomerAcceptedReqDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/CustomerAcceptedReqDistance"
+            app:layout_constraintTop_toTopOf="@id/CustomerAcceptedReqDistance"
+            app:layout_constraintBottom_toBottomOf="@id/CustomerAcceptedReqDistance"/>
+
+        <TextView
+            android:id="@+id/kmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/km_text"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintStart_toEndOf="@id/getCustomerAcceptedReqDistance"
+            app:layout_constraintTop_toTopOf="@id/getCustomerAcceptedReqDistance"
+            app:layout_constraintBottom_toBottomOf="@id/getCustomerAcceptedReqDistance"/>
+
+        <TextView
+            android:id="@+id/CustomerAcceptedReqPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/price_col"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/CustomerAcceptedReqDistance"
+            app:layout_constraintStart_toStartOf="@id/CustomerAcceptedReqDistance"/>
+
+        <TextView
+            android:id="@+id/getCustomerAcceptedReqPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/CustomerAcceptedReqPrice"
+            app:layout_constraintTop_toTopOf="@id/CustomerAcceptedReqPrice"
+            app:layout_constraintBottom_toBottomOf="@id/CustomerAcceptedReqPrice"/>
+
+        <TextView
+            android:id="@+id/CustomerAcceptedReqItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/item"
+            app:layout_constraintTop_toBottomOf="@id/CustomerAcceptedReqPrice"
+            app:layout_constraintStart_toStartOf="@id/CustomerAcceptedReqPrice"/>
+
+        <TextView
+            android:id="@+id/getCustomerAcceptedReqItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/CustomerAcceptedReqItem"
+            app:layout_constraintTop_toTopOf="@id/CustomerAcceptedReqItem"
+            app:layout_constraintBottom_toBottomOf="@id/CustomerAcceptedReqItem"/>
+
+        <TextView
+            android:id="@+id/TailorRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/zero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/getCustomerAcceptedReqFrom"
+            app:layout_constraintTop_toTopOf="@id/getCustomerAcceptedReqFrom"
+            app:drawableRightCompat="@drawable/ic_star"
+            android:drawablePadding="4dp"/>
+
+        <TextView
+            android:id="@+id/getCustomerAcceptedReqFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintEnd_toStartOf ="@+id/TailorRating"
+            app:layout_constraintBottom_toBottomOf="@id/CustomerAcceptedReqFrom"
+            app:layout_constraintTop_toTopOf="@id/CustomerAcceptedReqFrom"/>
+
+        <TextView
+            android:id="@+id/CustomerAcceptedReqFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/from"
+            app:layout_constraintEnd_toStartOf="@id/getCustomerAcceptedReqFrom"
+            app:layout_constraintTop_toTopOf="@id/CustomerAcceptedReqItem"
+            app:layout_constraintBottom_toBottomOf="@id/getCustomerAcceptedReqFrom"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

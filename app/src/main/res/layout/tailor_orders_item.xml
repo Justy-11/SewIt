@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:elevation="10dp"
+        android:padding="4dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/orderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/order_id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/getOrderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/orderID"
+            app:layout_constraintTop_toTopOf="@id/orderID"
+            app:layout_constraintBottom_toBottomOf="@id/orderID"/>
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/distance"
+            app:layout_constraintTop_toBottomOf="@id/orderID"
+            app:layout_constraintStart_toStartOf="@id/orderID"
+            />
+
+        <TextView
+            android:id="@+id/getDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/distance"
+            app:layout_constraintTop_toTopOf="@id/distance"
+            app:layout_constraintBottom_toBottomOf="@id/distance"/>
+
+        <TextView
+            android:id="@+id/kmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/km_text"
+            android:fontFamily="@font/lato_italic_regular"
+            app:layout_constraintStart_toEndOf="@id/getDistance"
+            app:layout_constraintTop_toTopOf="@id/getDistance"
+            app:layout_constraintBottom_toBottomOf="@id/getDistance"/>
+
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/price_col"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/distance"
+            app:layout_constraintStart_toStartOf="@id/distance"/>
+
+        <TextView
+            android:id="@+id/getPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/price"
+            app:layout_constraintTop_toTopOf="@id/price"
+            app:layout_constraintBottom_toBottomOf="@id/price"/>
+
+        <TextView
+            android:id="@+id/orderItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/item"
+            app:layout_constraintTop_toBottomOf="@id/price"
+            app:layout_constraintStart_toStartOf="@id/price"/>
+
+        <TextView
+            android:id="@+id/getOrderItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintStart_toEndOf="@id/orderItem"
+            app:layout_constraintTop_toTopOf="@id/orderItem"
+            app:layout_constraintBottom_toBottomOf="@id/orderItem"/>
+
+        <TextView
+            android:id="@+id/getOrderFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/hintGrey"
+            android:textSize="18sp"
+            android:text="@string/null_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/orderFrom"
+            app:layout_constraintTop_toTopOf="@id/orderFrom"/>
+
+        <TextView
+            android:id="@+id/orderFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/from"
+            app:layout_constraintEnd_toStartOf="@id/getOrderFrom"
+            app:layout_constraintTop_toTopOf="@id/orderItem"
+            app:layout_constraintBottom_toBottomOf="@id/orderItem"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

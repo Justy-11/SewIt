@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    android:padding="16dp">
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:stepSize="1.0"
+        android:progressTint="@color/teal_700"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/feedbackTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/feedback"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:layout_below="@+id/ratingBar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/getFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>

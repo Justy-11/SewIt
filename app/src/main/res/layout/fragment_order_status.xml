@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    android:background="@color/white"
+    tools:context=".OrderStatusFragment">
+
+    <include
+        android:id="@+id/toolBarStatus"
+        layout="@layout/tool_bar_order_status" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewOrderStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolBarStatus"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

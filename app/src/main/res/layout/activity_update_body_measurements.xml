@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    tools:context=".UpdateBodyMeasurements">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/body_measurements" />
+
+    <include
+        android:id="@+id/toolBarUpMeasurements"
+        layout="@layout/tool_bar_up_body_measurements" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputNeckTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/neck"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toStartOf="@+id/inputShoulderTIL"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarUpMeasurements">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputNeck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputShoulderTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/shoulder_length"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputNeckTIL"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarUpMeasurements">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputShoulder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputSleeveTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/sleeve_length"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@+id/inputNeckTIL"
+        app:layout_constraintStart_toStartOf="@+id/inputNeckTIL"
+        app:layout_constraintEnd_toEndOf="@+id/inputNeckTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputSleeve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputChestTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/chest"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputShoulderTIL"
+        app:layout_constraintStart_toStartOf="@id/inputShoulderTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputShoulderTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputChest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputWaistTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/waist"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputSleeveTIL"
+        app:layout_constraintStart_toStartOf="@id/inputSleeveTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputSleeveTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputWaist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputHipTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hip"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputChestTIL"
+        app:layout_constraintStart_toStartOf="@id/inputChestTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputChestTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputHip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputCenterBackTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/center_back"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputWaistTIL"
+        app:layout_constraintStart_toStartOf="@id/inputWaistTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputWaistTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCenterBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputCrotchLengthTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/crotch_length"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputHipTIL"
+        app:layout_constraintStart_toStartOf="@id/inputHipTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputHipTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCrotchLength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputCalfTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/calf"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputCenterBackTIL"
+        app:layout_constraintStart_toStartOf="@id/inputCenterBackTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputCenterBackTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCalf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputWristTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/wrist"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputCrotchLengthTIL"
+        app:layout_constraintStart_toStartOf="@id/inputCrotchLengthTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputCrotchLengthTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputWrist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputInseamTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/inseam"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputCalfTIL"
+        app:layout_constraintStart_toStartOf="@id/inputCalfTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputCalfTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputInseam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputOutSeamTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/out_seam"
+        app:boxStrokeColor="@color/teal_200"
+        app:hintTextColor="@color/hintGrey"
+        android:textColorHint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@id/inputWristTIL"
+        app:layout_constraintStart_toStartOf="@id/inputWristTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputWristTIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputOutSeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/saveMeasurementsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_bg"
+        android:text="@string/save"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/inputOutSeamTIL"
+        app:layout_constraintStart_toStartOf="@id/inputInseamTIL"
+        app:layout_constraintTop_toBottomOf="@id/inputOutSeamTIL"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_italic_regular"
+        android:text="@string/note_inches"
+        android:textColor="@color/hintGrey"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/saveMeasurementsBtn"
+        app:layout_constraintStart_toStartOf="@+id/saveMeasurementsBtn"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountDetails">
+
+    <include
+        android:id="@+id/toolBarAccDetails"
+        layout="@layout/tool_bar_acc_details" />
+
+    <TextView
+        android:id="@+id/detailsUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:text="@string/acc_username"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarAccDetails" />
+
+    <TextView
+        android:id="@+id/DBUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/null_data"
+        android:textColor="@color/darkGrey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/detailsUsername"
+        app:layout_constraintStart_toEndOf="@+id/detailsUsername"
+        app:layout_constraintTop_toTopOf="@+id/detailsUsername" />
+
+    <TextView
+        android:id="@+id/detailsEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/acc_email"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/detailsUsername"
+        app:layout_constraintTop_toBottomOf="@+id/detailsUsername" />
+
+    <TextView
+        android:id="@+id/DBEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/null_data"
+        android:textColor="@color/darkGrey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/detailsEmail"
+        app:layout_constraintStart_toEndOf="@+id/detailsEmail"
+        app:layout_constraintTop_toTopOf="@+id/detailsEmail" />
+
+    <TextView
+        android:id="@+id/detailsNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/acc_phone"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/detailsEmail"
+        app:layout_constraintTop_toBottomOf="@+id/detailsEmail" />
+
+    <TextView
+        android:id="@+id/DBNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/null_data"
+        android:textColor="@color/darkGrey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/detailsNumber"
+        app:layout_constraintStart_toEndOf="@+id/detailsNumber"
+        app:layout_constraintTop_toTopOf="@+id/detailsNumber" />
+
+    <TextView
+        android:id="@+id/detailsLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/location"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/detailsNumber"
+        app:layout_constraintTop_toBottomOf="@+id/detailsNumber" />
+
+    <TextView
+        android:id="@+id/DetailsLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="@string/acc_lat"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/detailsLocation"
+        app:layout_constraintTop_toBottomOf="@+id/detailsLocation" />
+
+    <TextView
+        android:id="@+id/DBLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/null_data"
+        android:textColor="@color/darkGrey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/DetailsLatitude"
+        app:layout_constraintStart_toEndOf="@+id/DetailsLatitude"
+        app:layout_constraintTop_toTopOf="@+id/DetailsLatitude" />
+
+    <TextView
+        android:id="@+id/DetailsLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="@string/acc_lng"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/DetailsLatitude"
+        app:layout_constraintTop_toBottomOf="@+id/DetailsLatitude" />
+
+    <TextView
+        android:id="@+id/DBLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/null_data"
+        android:textColor="@color/darkGrey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/DetailsLongitude"
+        app:layout_constraintStart_toEndOf="@+id/DetailsLongitude"
+        app:layout_constraintTop_toTopOf="@+id/DetailsLongitude" />
+
+    <TextView
+        android:id="@+id/DetailsAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="@string/acc_address"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/DetailsLongitude"
+        app:layout_constraintTop_toBottomOf="@+id/DetailsLongitude" />
+
+    <TextView
+        android:id="@+id/DBAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:padding="8dp"
+        android:text="@string/null_data"
+        android:textColor="@color/darkGrey"
+        android:textSize="18sp"
+        android:lines="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/DetailsAddress"
+        app:layout_constraintTop_toBottomOf="@+id/DBLongitude" />
+
+    <TextView
+        android:id="@+id/DBRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/DBUsername"
+        app:layout_constraintTop_toTopOf="@+id/DBUsername"
+        app:layout_constraintBottom_toBottomOf="@+id/DBUsername"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

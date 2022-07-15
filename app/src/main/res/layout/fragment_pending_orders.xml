@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    android:background="@color/white"
+    tools:context=".PendingOrdersFragment">
+
+    <include
+        android:id="@+id/toolBarPendingOrders"
+        layout="@layout/tool_bar_pending_orders" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFinishedOrders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolBarPendingOrders"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
