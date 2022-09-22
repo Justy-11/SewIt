@@ -553,6 +553,14 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <FrameLayout
+            android:id="@+id/fragmentContainerBodyMeasurements"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="inseamTIL"
+            app:layout_constraintEnd_toEndOf="@+id/outSeamTIL"
+            app:layout_constraintTop_toBottomOf="@id/inseamTIL"/>
+
         <Button
             android:id="@+id/placeReqBtn"
             android:layout_width="0dp"
@@ -565,7 +573,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/outSeamTIL"
             app:layout_constraintStart_toStartOf="@+id/inseamTIL"
-            app:layout_constraintTop_toBottomOf="@id/inseamTIL" />
+            app:layout_constraintTop_toBottomOf="@id/fragmentContainerBodyMeasurements" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
