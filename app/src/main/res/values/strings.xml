@@ -52,11 +52,14 @@
     <string name="add_note">Add note (Material, color, loose or tight, etc.)</string>
     <string name="select_item">Select item</string>
     <string-array name="items">
-        <item>T-shirt</item>
+        <item>Shirt (Short sleeve)</item>
+        <item>Shirt (Long sleeve)</item>
+        <item>T-shirt (Short sleeve)</item>
+        <item>T-shirt (Long sleeve)</item>
         <item>Pants</item>
-        <item>Skirt</item>
-        <item>Shirt</item>
-        <item>Suit</item>
+        <item>Shorts</item>
+        <item>Salwar</item>
+        <item>Blouse</item>
     </string-array>
     <string name="add_photo">Photos (click in the box to upload image)</string>
     <string name="add_measurements">Add body measurements</string>
