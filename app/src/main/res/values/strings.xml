@@ -49,7 +49,7 @@
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="add_note">Add note</string>
+    <string name="add_note">Add note (Material, color, loose or tight, etc.)</string>
     <string name="select_item">Select item</string>
     <string-array name="items">
         <item>T-shirt</item>
