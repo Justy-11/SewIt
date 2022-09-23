@@ -49,14 +49,19 @@
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/customer_accepted_req_item.xml" value="0.264" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/finished_order_tem.xml" value="0.25" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_accepted_req.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_blouse.xml" value="0.25" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_create_req.xml" value="0.264" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_more_cust.xml" value="0.264" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_more_tailor.xml" value="0.264" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_order_status.xml" value="0.264" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_orders.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_pants.xml" value="0.25" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_pending_orders.xml" value="0.264" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_requests.xml" value="0.264" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_shirt_l_s.xml" value="0.25" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_shirt_s_s.xml" value="0.25" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_tshirt_l_s.xml" value="0.25" />
+        <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/fragment_tshirt_s_s.xml" value="0.25" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/layout_rating_dialog.xml" value="0.264" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/order_status_item.xml" value="0.25" />
         <entry key="..\:/JATHURSH/AndroidStu_Projects/SewIt/app/src/main/res/layout/tailor_orders_item.xml" value="0.264" />
