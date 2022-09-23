@@ -557,9 +557,9 @@
             android:id="@+id/fragmentContainerBodyMeasurements"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="inseamTIL"
+            app:layout_constraintStart_toStartOf="@id/inseamTIL"
             app:layout_constraintEnd_toEndOf="@+id/outSeamTIL"
-            app:layout_constraintTop_toBottomOf="@id/inseamTIL"/>
+            app:layout_constraintTop_toBottomOf="@id/inseamTIL" />
 
         <Button
             android:id="@+id/placeReqBtn"
