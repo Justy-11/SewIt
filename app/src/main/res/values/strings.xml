@@ -124,6 +124,23 @@
     <string name="feedback">Feedback</string>
     <string name="rating">Rating:</string>
     <string name="zero">0</string>
+    <string name="blouse_length">Blouse length</string>
+    <string name="arm_hole">Armhole</string>
+    <string name="lower_bust">Lower bust</string>
+    <string name="front_neck_depth">Neck front</string>
+    <string name="back_neck_depth">Neck back</string>
+    <string name="sleeve_width">Sleeve width</string>
+    <string name="bicep_around">Bicep around</string>
+    <string name="shirt_length">Shirt length</string>
+    <string name="short_length">Shorts length</string>
+    <string name="tShirt_length">TShirt length</string>
+    <string name="thigh_around">Thigh around</string>
+    <string name="leg_opening">Leg opening</string>
+    <string name="knee_around">Knee around</string>
+    <string name="bottom">Bottom</string>
+    <string name="around_above_waist">Around above waist</string>
+    <string name="kameez_length">Kameez length</string>
+    <string name="salwar_length">Salwar length</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
