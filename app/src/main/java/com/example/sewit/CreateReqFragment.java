@@ -13,11 +13,13 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,6 +27,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.sewit.BodyMeasurements.BlouseFragment;
+import com.example.sewit.BodyMeasurements.PantsFragment;
+import com.example.sewit.BodyMeasurements.SalwarFragment;
+import com.example.sewit.BodyMeasurements.ShirtLSFragment;
+import com.example.sewit.BodyMeasurements.ShirtSSFragment;
+import com.example.sewit.BodyMeasurements.ShortsFragment;
+import com.example.sewit.BodyMeasurements.TshirtLSFragment;
+import com.example.sewit.BodyMeasurements.TshirtSSFragment;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -108,6 +118,45 @@ public class CreateReqFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),R.array.items,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerItems.setAdapter(adapter);
+
+        //spinner item selected listener - 23/09/2022
+        spinnerItems.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        setFragment(new ShirtSSFragment());
+                        break;
+                    case 1:
+                        setFragment(new ShirtLSFragment());
+                        break;
+                    case 2:
+                        setFragment(new TshirtSSFragment());
+                        break;
+                    case 3:
+                        setFragment(new TshirtLSFragment());
+                        break;
+                    case 4:
+                        setFragment(new PantsFragment());
+                        break;
+                    case 5:
+                        setFragment(new ShortsFragment());
+                        break;
+                    case 6:
+                        setFragment(new SalwarFragment());
+                        break;
+                    case 7:
+                        setFragment(new BlouseFragment());
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         FirebaseUser user = fAuth.getCurrentUser();
         assert user != null;
@@ -416,5 +465,13 @@ public class CreateReqFragment extends Fragment {
         ContentResolver cR = requireContext().getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
+
+    //23/09/2022
+    public void setFragment(Fragment fragment){
+        assert getFragmentManager() != null;
+        FragmentTransaction fragmentTransaction =  getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainerBodyMeasurements, fragment);
+        fragmentTransaction.commit();
     }
 }
