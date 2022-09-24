@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sewit.R;
@@ -22,6 +23,7 @@ public class BlouseFragment extends Fragment {
 
     TextInputEditText blouse_length,armhole,lower_bust,bust,
             shoulder_length,neck_front,neck_back,sleeve_length,sleeve_width;
+    Button confirm_btn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
@@ -40,6 +42,7 @@ public class BlouseFragment extends Fragment {
         neck_back = v.findViewById(R.id.neckBack);
         sleeve_length = v.findViewById(R.id.sleeveLength);
         sleeve_width = v.findViewById(R.id.sleeveWidth);
+        confirm_btn = v.findViewById(R.id.confirmBtn);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -69,6 +72,34 @@ public class BlouseFragment extends Fragment {
                     }
 
                 }).addOnFailureListener(e -> Toast.makeText(getContext(),"Error while loading", Toast.LENGTH_SHORT).show());
+
+        confirm_btn.setOnClickListener(v1 -> {
+            //check all fields are filled
+            if(String.valueOf(blouse_length.getText()).isEmpty() || String.valueOf(armhole.getText()).isEmpty() ||
+                    String.valueOf(lower_bust.getText()).isEmpty() || String.valueOf(bust.getText()).isEmpty() ||
+                    String.valueOf(shoulder_length.getText()).isEmpty() || String.valueOf(neck_front.getText()).isEmpty()||
+                    String.valueOf(neck_back.getText()).isEmpty() || String.valueOf(sleeve_length.getText()).isEmpty() ||
+                    String.valueOf(sleeve_width.getText()).isEmpty()){
+                Toast.makeText(getContext(),"All fields should be filled", Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                Bundle bundle = new Bundle();
+                bundle.putString("blouse_length", String.valueOf(blouse_length.getText()));
+                bundle.putString("armhole", String.valueOf(armhole.getText()));
+                bundle.putString("lower_bust", String.valueOf(lower_bust.getText()));
+                bundle.putString("bust", String.valueOf(bust.getText()));
+                bundle.putString("shoulder_length", String.valueOf(shoulder_length.getText()));
+                bundle.putString("neck_front", String.valueOf(neck_front.getText()));
+                bundle.putString("neck_back", String.valueOf(neck_back.getText()));
+                bundle.putString("sleeve_length", String.valueOf(sleeve_length.getText()));
+                bundle.putString("sleeve_width", String.valueOf(sleeve_width.getText()));
+                getParentFragmentManager().setFragmentResult("Blouse",bundle);
+
+                Toast.makeText(getContext(),"Saved", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         return v;
     }

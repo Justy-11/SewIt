@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
@@ -58,6 +59,7 @@ public class CreateReqFragment extends Fragment {
     CheckBox male,female;
     TextInputEditText name,number,lat,lng, neck,shoulder,sleeve,chest,waist
             ,hip,centerBack,crotchLength,wrist,calf,inseam,outSeam,note;
+
     double startLatitude,startLongitude,endLatitude, endLongitude;
     Button placeReq;
     String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
@@ -83,6 +85,9 @@ public class CreateReqFragment extends Fragment {
         number = v.findViewById(R.id.inputNumber);
         lat = v.findViewById(R.id.inputLat);
         lng = v.findViewById(R.id.inputLng);
+        note = v.findViewById(R.id.noteAdd);
+        placeReq = v.findViewById(R.id.placeReqBtn);
+        /* //commented on 23/09/2022
         neck = v.findViewById(R.id.neckAdd);
         shoulder = v.findViewById(R.id.shoulderAdd);
         sleeve = v.findViewById(R.id.sleeveAdd);
@@ -95,8 +100,7 @@ public class CreateReqFragment extends Fragment {
         calf = v.findViewById(R.id.calfAdd);
         inseam = v.findViewById(R.id.inseamAdd);
         outSeam = v.findViewById(R.id.outSeamAdd);
-        note = v.findViewById(R.id.noteAdd);
-        placeReq = v.findViewById(R.id.placeReqBtn);
+        */
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -189,6 +193,7 @@ public class CreateReqFragment extends Fragment {
                 })
                 .addOnFailureListener(e -> Toast.makeText(getContext(),"Error while loading", Toast.LENGTH_SHORT).show());
 
+/* //commented on 23/09/2022
         df2.get()
                 .addOnSuccessListener(documentSnapshot2 -> {
                     if(documentSnapshot2.exists()){
@@ -254,11 +259,12 @@ public class CreateReqFragment extends Fragment {
                     }
                 })
                 .addOnFailureListener(e -> Toast.makeText(getContext(),"Error while loading", Toast.LENGTH_SHORT).show());
-
+*/
         addPhoto.setOnClickListener(v1 -> checkPermission());
 
         // place request btn listener - save placed requests
         placeReq.setOnClickListener(v12 -> {
+
             checkValidity();
 
             if(valid){
@@ -329,6 +335,7 @@ public class CreateReqFragment extends Fragment {
                                                                     reqInfo.put("note", Objects.requireNonNull(note.getText()).toString());
                                                                 }
                                                                 reqInfo.put("imageUrl",uploadUrl);
+                                                                /* // commented 23/09/2022
                                                                 reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
                                                                 reqInfo.put("shoulder", Objects.requireNonNull(shoulder.getText()).toString());
                                                                 reqInfo.put("sleeve", Objects.requireNonNull(sleeve.getText()).toString());
@@ -341,6 +348,68 @@ public class CreateReqFragment extends Fragment {
                                                                 reqInfo.put("calf", Objects.requireNonNull(calf.getText()).toString());
                                                                 reqInfo.put("inseam", Objects.requireNonNull(inseam.getText()).toString());
                                                                 reqInfo.put("outSeam", Objects.requireNonNull(outSeam.getText()).toString());
+                                                                */
+
+                                                                // 23/09/2022
+                                                                /*
+                                                                if(spinnerItems.getSelectedItem().toString().equals("Shirt (Short sleeve)")){
+                                                                    reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
+                                                                    reqInfo.put("shoulder length", Objects.requireNonNull(shoulder.getText()).toString());
+                                                                    reqInfo.put("sleeve length", Objects.requireNonNull(sleeve_length.getText()).toString());
+                                                                    reqInfo.put("chest", Objects.requireNonNull(chest.getText()).toString());
+                                                                    reqInfo.put("waist", Objects.requireNonNull(waist.getText()).toString());
+                                                                    reqInfo.put("shirt length", Objects.requireNonNull(shirt_length.getText()).toString());
+                                                                    reqInfo.put("armhole", Objects.requireNonNull(armhole.getText()).toString());
+                                                                    reqInfo.put("sleeve width", Objects.requireNonNull(sleeve_width.getText()).toString());
+
+                                                                }
+                                                                if(spinnerItems.getSelectedItem().toString().equals("Shirt (Long sleeve)")){
+                                                                    reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
+                                                                    reqInfo.put("shoulder length", Objects.requireNonNull(shoulder.getText()).toString());
+                                                                    reqInfo.put("sleeve length", Objects.requireNonNull(sleeve_length.getText()).toString());
+                                                                    reqInfo.put("chest", Objects.requireNonNull(chest.getText()).toString());
+                                                                    reqInfo.put("waist", Objects.requireNonNull(waist.getText()).toString());
+                                                                    reqInfo.put("shirt length", Objects.requireNonNull(shirt_length.getText()).toString());
+                                                                    reqInfo.put("sleeve width", Objects.requireNonNull(sleeve_width.getText()).toString());
+                                                                    reqInfo.put("wrist", Objects.requireNonNull(wrist.getText()).toString());
+                                                                    reqInfo.put("bicep around", Objects.requireNonNull(bicep_around.getText()).toString());
+
+                                                                }
+                                                                if(spinnerItems.getSelectedItem().toString().equals("T-shirt (Short sleeve)")
+                                                                || spinnerItems.getSelectedItem().toString().equals("T-shirt (Long sleeve)")){
+                                                                    reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
+                                                                    reqInfo.put("shoulder length", Objects.requireNonNull(shoulder.getText()).toString());
+                                                                    reqInfo.put("sleeve length", Objects.requireNonNull(sleeve_length.getText()).toString());
+                                                                    reqInfo.put("chest", Objects.requireNonNull(chest.getText()).toString());
+                                                                    reqInfo.put("waist", Objects.requireNonNull(waist.getText()).toString());
+                                                                    reqInfo.put("t-shirt length", Objects.requireNonNull(tShirt_length.getText()).toString());
+                                                                    reqInfo.put("armhole", Objects.requireNonNull(armhole.getText()).toString());
+                                                                    reqInfo.put("sleeve width", Objects.requireNonNull(sleeve_width.getText()).toString());
+
+                                                                }
+
+                                                                if(spinnerItems.getSelectedItem().toString().equals("Pants")){
+
+                                                                }
+                                                                if(spinnerItems.getSelectedItem().toString().equals("Shorts")){
+
+                                                                }
+                                                                if(spinnerItems.getSelectedItem().toString().equals("Salwar")){
+
+                                                                }
+                                                                if(spinnerItems.getSelectedItem().toString().equals("Blouse")){
+
+                                                                    getParentFragmentManager().setFragmentResultListener("Blouse", this, new FragmentResultListener() {
+                                                                        @Override
+                                                                        public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                                                                            reqInfo.put("blouse length", result.getString("blouse_length"));
+                                                                            reqInfo.put("armhole", result.getString("armhole"));
+                                                                        }
+                                                                    });
+
+                                                                }
+                                                                */
+
                                                                 reqInfo.put("reqAccepted",false);
                                                                 reqInfo.put("created",Timestamp.now());
 
@@ -373,6 +442,7 @@ public class CreateReqFragment extends Fragment {
                                             if(!String.valueOf(note.getText()).isEmpty()){
                                                 reqInfo.put("note", Objects.requireNonNull(note.getText()).toString());
                                             }
+                                            /* // commented 23/09/2022
                                             reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
                                             reqInfo.put("shoulder", Objects.requireNonNull(shoulder.getText()).toString());
                                             reqInfo.put("sleeve", Objects.requireNonNull(sleeve.getText()).toString());
@@ -385,6 +455,7 @@ public class CreateReqFragment extends Fragment {
                                             reqInfo.put("calf", Objects.requireNonNull(calf.getText()).toString());
                                             reqInfo.put("inseam", Objects.requireNonNull(inseam.getText()).toString());
                                             reqInfo.put("outSeam", Objects.requireNonNull(outSeam.getText()).toString());
+                                            */
                                             reqInfo.put("reqAccepted",false);
                                             reqInfo.put("created",Timestamp.now());
 
@@ -407,14 +478,9 @@ public class CreateReqFragment extends Fragment {
     // check validity of fields while clicking on place request button
     public boolean checkValidity(){
 
+        //commented on 23/09/2022
         if(String.valueOf(name.getText()).isEmpty() || String.valueOf(number.getText()).isEmpty()
                 || String.valueOf(lat.getText()).isEmpty() || String.valueOf(lng.getText()).isEmpty()
-                || String.valueOf(neck.getText()).isEmpty() || String.valueOf(shoulder.getText()).isEmpty()
-                || String.valueOf(sleeve.getText()).isEmpty() || String.valueOf(chest.getText()).isEmpty()
-                || String.valueOf(waist.getText()).isEmpty() || String.valueOf(hip.getText()).isEmpty()
-                || String.valueOf(centerBack.getText()).isEmpty() || String.valueOf(crotchLength.getText()).isEmpty()
-                || String.valueOf(wrist.getText()).isEmpty() || String.valueOf(calf.getText()).isEmpty()
-                || String.valueOf(inseam.getText()).isEmpty() || String.valueOf(outSeam.getText()).isEmpty()
                 || !(male.isChecked() || female.isChecked()) || spinnerItems.getSelectedItem().toString().isEmpty()){
             Toast.makeText(getActivity(),"All fields are required except note and image", Toast.LENGTH_LONG).show();
             valid = false;

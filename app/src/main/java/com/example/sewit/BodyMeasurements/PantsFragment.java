@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sewit.R;
@@ -22,6 +23,7 @@ public class PantsFragment extends Fragment {
 
     TextInputEditText hip,waist,crotch_length,in_seam,out_seam,calf
             ,thigh_around,knee_around,bottom;
+    Button confirm_btn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
@@ -40,6 +42,7 @@ public class PantsFragment extends Fragment {
         thigh_around = v.findViewById(R.id.thigh);
         knee_around = v.findViewById(R.id.knee);
         bottom = v.findViewById(R.id.bottom);
+        confirm_btn = v.findViewById(R.id.confirmBtn);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -86,6 +89,34 @@ public class PantsFragment extends Fragment {
                     }
 
                 }).addOnFailureListener(e -> Toast.makeText(getContext(),"Error while loading", Toast.LENGTH_SHORT).show());
+
+        confirm_btn.setOnClickListener(v1 -> {
+            //check all fields are filled
+            if(String.valueOf(hip.getText()).isEmpty() || String.valueOf(waist.getText()).isEmpty() ||
+                    String.valueOf(crotch_length.getText()).isEmpty() || String.valueOf(in_seam.getText()).isEmpty() ||
+                    String.valueOf(out_seam.getText()).isEmpty() || String.valueOf(calf.getText()).isEmpty()||
+                    String.valueOf(thigh_around.getText()).isEmpty() || String.valueOf(knee_around.getText()).isEmpty() ||
+                    String.valueOf(bottom.getText()).isEmpty()){
+                Toast.makeText(getContext(),"All fields should be filled", Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                Bundle bundle = new Bundle();
+                bundle.putString("hip", String.valueOf(hip.getText()));
+                bundle.putString("waist", String.valueOf(waist.getText()));
+                bundle.putString("crotch_length", String.valueOf(crotch_length.getText()));
+                bundle.putString("in_seam", String.valueOf(in_seam.getText()));
+                bundle.putString("out_seam", String.valueOf(out_seam.getText()));
+                bundle.putString("thigh_around", String.valueOf(thigh_around.getText()));
+                bundle.putString("bottom", String.valueOf(bottom.getText()));
+                bundle.putString("knee_around", String.valueOf(knee_around.getText()));
+                bundle.putString("calf", String.valueOf(calf.getText()));
+                getParentFragmentManager().setFragmentResult("Pants",bundle);
+
+                Toast.makeText(getContext(),"Saved", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         return v;
     }

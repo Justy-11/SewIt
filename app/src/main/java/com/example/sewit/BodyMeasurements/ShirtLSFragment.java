@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sewit.R;
@@ -22,6 +23,7 @@ public class ShirtLSFragment extends Fragment {
 
     TextInputEditText neck,bust,waist,shoulder_length,sleeve_length,wrist
             ,shirt_length,bicep_around,sleeve_width;
+    Button confirm_btn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
@@ -40,6 +42,7 @@ public class ShirtLSFragment extends Fragment {
         shirt_length = v.findViewById(R.id.shirtLength);
         bicep_around = v.findViewById(R.id.bicepAround);
         sleeve_width = v.findViewById(R.id.sleeveWidth);
+        confirm_btn = v.findViewById(R.id.confirmBtn);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -87,6 +90,34 @@ public class ShirtLSFragment extends Fragment {
 
                 }).addOnFailureListener(e -> Toast.makeText(getContext(),"Error while loading", Toast.LENGTH_SHORT).show());
 
+        confirm_btn.setOnClickListener(v1 -> {
+            //check all fields are filled
+            if(String.valueOf(neck.getText()).isEmpty() || String.valueOf(waist.getText()).isEmpty() ||
+                    String.valueOf(shoulder_length.getText()).isEmpty() || String.valueOf(bust.getText()).isEmpty() ||
+                    String.valueOf(sleeve_length.getText()).isEmpty() || String.valueOf(shirt_length.getText()).isEmpty()||
+                    String.valueOf(wrist.getText()).isEmpty() || String.valueOf(bicep_around.getText()).isEmpty() ||
+                    String.valueOf(sleeve_width.getText()).isEmpty()){
+                Toast.makeText(getContext(),"All fields should be filled", Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                Bundle bundle = new Bundle();
+                bundle.putString("neck", String.valueOf(neck.getText()));
+                bundle.putString("waist", String.valueOf(waist.getText()));
+                bundle.putString("shoulder_length", String.valueOf(shoulder_length.getText()));
+                bundle.putString("bust", String.valueOf(bust.getText()));
+                bundle.putString("sleeve_length", String.valueOf(sleeve_length.getText()));
+                bundle.putString("shirt_length", String.valueOf(shirt_length.getText()));
+                bundle.putString("wrist", String.valueOf(wrist.getText()));
+                bundle.putString("bicep_around", String.valueOf(bicep_around.getText()));
+                bundle.putString("sleeve_width", String.valueOf(sleeve_width.getText()));
+
+                getParentFragmentManager().setFragmentResult("ShirtLS",bundle);
+
+                Toast.makeText(getContext(),"Saved", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         return v;
     }

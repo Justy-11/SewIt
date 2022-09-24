@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sewit.R;
@@ -22,6 +23,7 @@ public class ShortsFragment extends Fragment {
 
     TextInputEditText hip,waist,crotch_length
             ,shorts_length,thigh_around,leg_opening;
+    Button confirm_btn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
@@ -37,6 +39,7 @@ public class ShortsFragment extends Fragment {
         shorts_length = v.findViewById(R.id.shortLength);
         thigh_around = v.findViewById(R.id.thigh);
         leg_opening = v.findViewById(R.id.legOpening);
+        confirm_btn = v.findViewById(R.id.confirmBtn);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -68,6 +71,30 @@ public class ShortsFragment extends Fragment {
                     }
 
                 }).addOnFailureListener(e -> Toast.makeText(getContext(),"Error while loading", Toast.LENGTH_SHORT).show());
+
+        confirm_btn.setOnClickListener(v1 -> {
+            //check all fields are filled
+            if(String.valueOf(hip.getText()).isEmpty() || String.valueOf(waist.getText()).isEmpty() ||
+                    String.valueOf(crotch_length.getText()).isEmpty() || String.valueOf(shorts_length.getText()).isEmpty() ||
+                    String.valueOf(thigh_around.getText()).isEmpty() || String.valueOf(leg_opening.getText()).isEmpty()){
+                Toast.makeText(getContext(),"All fields should be filled", Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                Bundle bundle = new Bundle();
+                bundle.putString("hip", String.valueOf(hip.getText()));
+                bundle.putString("waist", String.valueOf(waist.getText()));
+                bundle.putString("crotch_length", String.valueOf(crotch_length.getText()));
+                bundle.putString("shorts_length", String.valueOf(shorts_length.getText()));
+                bundle.putString("thigh_around", String.valueOf(thigh_around.getText()));
+                bundle.putString("leg_opening", String.valueOf(leg_opening.getText()));
+
+                getParentFragmentManager().setFragmentResult("Shorts",bundle);
+
+                Toast.makeText(getContext(),"Saved", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         return v;
     }

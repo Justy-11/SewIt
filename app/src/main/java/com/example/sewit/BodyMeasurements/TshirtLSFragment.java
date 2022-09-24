@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sewit.R;
@@ -22,6 +23,7 @@ public class TshirtLSFragment extends Fragment {
 
     TextInputEditText neck,bust,waist,shoulder_length,sleeve_length
     ,tShirt_length,armhole,sleeve_width;
+    Button confirm_btn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
@@ -39,7 +41,7 @@ public class TshirtLSFragment extends Fragment {
         tShirt_length = v.findViewById(R.id.tShirtLength);
         armhole = v.findViewById(R.id.armhole);
         sleeve_width = v.findViewById(R.id.sleeveWidth);
-
+        confirm_btn = v.findViewById(R.id.confirmBtn);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -81,6 +83,33 @@ public class TshirtLSFragment extends Fragment {
                     }
 
                 }).addOnFailureListener(e -> Toast.makeText(getContext(),"Error while loading", Toast.LENGTH_SHORT).show());
+
+        confirm_btn.setOnClickListener(v1 -> {
+            //check all fields are filled
+            if(String.valueOf(neck.getText()).isEmpty() || String.valueOf(waist.getText()).isEmpty() ||
+                    String.valueOf(shoulder_length.getText()).isEmpty() || String.valueOf(bust.getText()).isEmpty() ||
+                    String.valueOf(sleeve_length.getText()).isEmpty() || String.valueOf(tShirt_length.getText()).isEmpty()||
+                    String.valueOf(armhole.getText()).isEmpty() || String.valueOf(sleeve_width.getText()).isEmpty()){
+                Toast.makeText(getContext(),"All fields should be filled", Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                Bundle bundle = new Bundle();
+                bundle.putString("neck", String.valueOf(neck.getText()));
+                bundle.putString("waist", String.valueOf(waist.getText()));
+                bundle.putString("shoulder_length", String.valueOf(shoulder_length.getText()));
+                bundle.putString("bust", String.valueOf(bust.getText()));
+                bundle.putString("sleeve_length", String.valueOf(sleeve_length.getText()));
+                bundle.putString("tShirt_length", String.valueOf(tShirt_length.getText()));
+                bundle.putString("armhole", String.valueOf(armhole.getText()));
+                bundle.putString("sleeve_width", String.valueOf(sleeve_width.getText()));
+
+                getParentFragmentManager().setFragmentResult("TShirtLS",bundle);
+
+                Toast.makeText(getContext(),"Saved", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         return v;
     }
