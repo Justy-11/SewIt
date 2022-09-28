@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,11 +37,13 @@ import com.example.sewit.BodyMeasurements.ShirtSSFragment;
 import com.example.sewit.BodyMeasurements.ShortsFragment;
 import com.example.sewit.BodyMeasurements.TshirtLSFragment;
 import com.example.sewit.BodyMeasurements.TshirtSSFragment;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
@@ -51,9 +54,9 @@ import java.util.Map;
 import java.util.Objects;
 
 
-public class CreateReqFragment extends Fragment {
+public class CreateReqFragment extends Fragment{
 
-    //private static final String TAG = "CreateReqFragment";
+    private static final String TAG = "CreateReqFragment";
     Spinner spinnerItems;
     ImageView addPhoto;
     CheckBox male,female;
@@ -102,9 +105,11 @@ public class CreateReqFragment extends Fragment {
         outSeam = v.findViewById(R.id.outSeamAdd);
         */
 
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
+
 
         //checkbox logic
         male.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -262,6 +267,7 @@ public class CreateReqFragment extends Fragment {
 */
         addPhoto.setOnClickListener(v1 -> checkPermission());
 
+
         // place request btn listener - save placed requests
         placeReq.setOnClickListener(v12 -> {
 
@@ -335,6 +341,8 @@ public class CreateReqFragment extends Fragment {
                                                                     reqInfo.put("note", Objects.requireNonNull(note.getText()).toString());
                                                                 }
                                                                 reqInfo.put("imageUrl",uploadUrl);
+                                                                reqInfo.put("reqAccepted",false);
+                                                                reqInfo.put("created",Timestamp.now());
                                                                 /* // commented 23/09/2022
                                                                 reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
                                                                 reqInfo.put("shoulder", Objects.requireNonNull(shoulder.getText()).toString());
@@ -349,71 +357,141 @@ public class CreateReqFragment extends Fragment {
                                                                 reqInfo.put("inseam", Objects.requireNonNull(inseam.getText()).toString());
                                                                 reqInfo.put("outSeam", Objects.requireNonNull(outSeam.getText()).toString());
                                                                 */
+                                                                //Log.i(TAG, "TEst");
 
-                                                                // 23/09/2022
+
+                                                                // 27/09/2022
                                                                 /*
                                                                 if(spinnerItems.getSelectedItem().toString().equals("Shirt (Short sleeve)")){
-                                                                    reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
-                                                                    reqInfo.put("shoulder length", Objects.requireNonNull(shoulder.getText()).toString());
-                                                                    reqInfo.put("sleeve length", Objects.requireNonNull(sleeve_length.getText()).toString());
-                                                                    reqInfo.put("chest", Objects.requireNonNull(chest.getText()).toString());
-                                                                    reqInfo.put("waist", Objects.requireNonNull(waist.getText()).toString());
-                                                                    reqInfo.put("shirt length", Objects.requireNonNull(shirt_length.getText()).toString());
-                                                                    reqInfo.put("armhole", Objects.requireNonNull(armhole.getText()).toString());
-                                                                    reqInfo.put("sleeve width", Objects.requireNonNull(sleeve_width.getText()).toString());
 
-                                                                }
-                                                                if(spinnerItems.getSelectedItem().toString().equals("Shirt (Long sleeve)")){
-                                                                    reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
-                                                                    reqInfo.put("shoulder length", Objects.requireNonNull(shoulder.getText()).toString());
-                                                                    reqInfo.put("sleeve length", Objects.requireNonNull(sleeve_length.getText()).toString());
-                                                                    reqInfo.put("chest", Objects.requireNonNull(chest.getText()).toString());
-                                                                    reqInfo.put("waist", Objects.requireNonNull(waist.getText()).toString());
-                                                                    reqInfo.put("shirt length", Objects.requireNonNull(shirt_length.getText()).toString());
-                                                                    reqInfo.put("sleeve width", Objects.requireNonNull(sleeve_width.getText()).toString());
-                                                                    reqInfo.put("wrist", Objects.requireNonNull(wrist.getText()).toString());
-                                                                    reqInfo.put("bicep around", Objects.requireNonNull(bicep_around.getText()).toString());
-
-                                                                }
-                                                                if(spinnerItems.getSelectedItem().toString().equals("T-shirt (Short sleeve)")
-                                                                || spinnerItems.getSelectedItem().toString().equals("T-shirt (Long sleeve)")){
-                                                                    reqInfo.put("neck", Objects.requireNonNull(neck.getText()).toString());
-                                                                    reqInfo.put("shoulder length", Objects.requireNonNull(shoulder.getText()).toString());
-                                                                    reqInfo.put("sleeve length", Objects.requireNonNull(sleeve_length.getText()).toString());
-                                                                    reqInfo.put("chest", Objects.requireNonNull(chest.getText()).toString());
-                                                                    reqInfo.put("waist", Objects.requireNonNull(waist.getText()).toString());
-                                                                    reqInfo.put("t-shirt length", Objects.requireNonNull(tShirt_length.getText()).toString());
-                                                                    reqInfo.put("armhole", Objects.requireNonNull(armhole.getText()).toString());
-                                                                    reqInfo.put("sleeve width", Objects.requireNonNull(sleeve_width.getText()).toString());
-
-                                                                }
-
-                                                                if(spinnerItems.getSelectedItem().toString().equals("Pants")){
-
-                                                                }
-                                                                if(spinnerItems.getSelectedItem().toString().equals("Shorts")){
-
-                                                                }
-                                                                if(spinnerItems.getSelectedItem().toString().equals("Salwar")){
-
-                                                                }
-                                                                if(spinnerItems.getSelectedItem().toString().equals("Blouse")){
-
-                                                                    getParentFragmentManager().setFragmentResultListener("Blouse", this, new FragmentResultListener() {
-                                                                        @Override
-                                                                        public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                                                                            reqInfo.put("blouse length", result.getString("blouse_length"));
-                                                                            reqInfo.put("armhole", result.getString("armhole"));
-                                                                        }
+                                                                    requireActivity().getSupportFragmentManager().setFragmentResultListener("ShirtSS",this, (requestKey, result) -> {
+                                                                        reqInfo.put("neck", result.getString("neck"));
+                                                                        Log.i(TAG, "HERE2");
+                                                                        reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                                        reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                                        reqInfo.put("chest", result.getString("chest"));
+                                                                        reqInfo.put("waist", result.getString("waist"));
+                                                                        reqInfo.put("srrhirt length", result.getString("shirt_length"));
+                                                                        reqInfo.put("armhole", result.getString("armhole"));
+                                                                        reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                                        Log.i(TAG, "neck " + result.getString("neck"));
                                                                     });
 
                                                                 }
-                                                                */
+                                                                else if(spinnerItems.getSelectedItem().toString().equals("Shirt (Long sleeve)")){
 
-                                                                reqInfo.put("reqAccepted",false);
-                                                                reqInfo.put("created",Timestamp.now());
+                                                                    getParentFragmentManager().setFragmentResultListener("ShirtLS", this, (requestKey, result) -> {
+                                                                        reqInfo.put("neck", result.getString("neck"));
+                                                                        reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                                        reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                                        reqInfo.put("chest", result.getString("chest"));
+                                                                        reqInfo.put("waist", result.getString("waist"));
+                                                                        reqInfo.put("shirt length", result.getString("shirt_length"));
+                                                                        reqInfo.put("wrist", result.getString("wrist"));
+                                                                        reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                                        reqInfo.put("bicep around", result.getString("bicep_around"));
+                                                                    });
 
+                                                                }
+                                                                else if(spinnerItems.getSelectedItem().toString().equals("T-shirt (Short sleeve)")){
+
+                                                                    getParentFragmentManager().setFragmentResultListener("TShirtSS", this, (requestKey, result) -> {
+                                                                        reqInfo.put("neck", result.getString("neck"));
+                                                                        reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                                        reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                                        reqInfo.put("chest", result.getString("chest"));
+                                                                        reqInfo.put("waist", result.getString("waist"));
+                                                                        reqInfo.put("t-shirt length", result.getString("tShirt_length"));
+                                                                        reqInfo.put("armhole", result.getString("armhole"));
+                                                                        reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                                    });
+
+                                                                }
+
+                                                                else if(spinnerItems.getSelectedItem().toString().equals("T-shirt (Long sleeve)")){
+
+                                                                    getParentFragmentManager().setFragmentResultListener("TShirtLS", this, (requestKey, result) -> {
+                                                                        reqInfo.put("neck", result.getString("neck"));
+                                                                        reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                                        reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                                        reqInfo.put("chest", result.getString("chest"));
+                                                                        reqInfo.put("waist", result.getString("waist"));
+                                                                        reqInfo.put("t-shirt length", result.getString("tShirt_length"));
+                                                                        reqInfo.put("armhole", result.getString("armhole"));
+                                                                        reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                                    });
+
+                                                                }
+
+                                                                else if(spinnerItems.getSelectedItem().toString().equals("Pants")){
+
+                                                                    getParentFragmentManager().setFragmentResultListener("Pants", this, (requestKey, result) -> {
+                                                                        reqInfo.put("hip", result.getString("hip"));
+                                                                        reqInfo.put("waist", result.getString("waist"));
+                                                                        reqInfo.put("crotch length", result.getString("crotch_length"));
+                                                                        reqInfo.put("inseam", result.getString("in_seam"));
+                                                                        reqInfo.put("outseam", result.getString("out_seam"));
+                                                                        reqInfo.put("thigh around", result.getString("thigh_around"));
+                                                                        reqInfo.put("bottom", result.getString("bottom"));
+                                                                        reqInfo.put("knee around", result.getString("knee_around"));
+                                                                        reqInfo.put("calf", result.getString("calf"));
+
+                                                                    });
+
+                                                                }
+                                                                else if(spinnerItems.getSelectedItem().toString().equals("Shorts")){
+
+                                                                    getParentFragmentManager().setFragmentResultListener("Shorts", this, (requestKey, result) -> {
+                                                                        reqInfo.put("hip", result.getString("hip"));
+                                                                        reqInfo.put("waist", result.getString("waist"));
+                                                                        reqInfo.put("crotch length", result.getString("crotch_length"));
+                                                                        reqInfo.put("thigh around", result.getString("thigh_around"));
+                                                                        reqInfo.put("shorts length", result.getString("shorts_length"));
+                                                                        reqInfo.put("leg opening", result.getString("leg_opening"));
+
+                                                                    });
+
+                                                                }
+                                                                else if(spinnerItems.getSelectedItem().toString().equals("Salwar")){
+
+                                                                    getParentFragmentManager().setFragmentResultListener("Salwar", this, (requestKey, result) -> {
+
+                                                                        reqInfo.put("hip", result.getString("hip"));
+                                                                        reqInfo.put("waist", result.getString("waist"));
+                                                                        reqInfo.put("calf", result.getString("calf"));
+                                                                        reqInfo.put("bust", result.getString("bust"));
+                                                                        reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                                        reqInfo.put("salwar length", result.getString("salwar_length"));
+                                                                        reqInfo.put("kameez length", result.getString("kameez_length"));
+                                                                        reqInfo.put("bottom", result.getString("bottom"));
+                                                                        reqInfo.put("neck front", result.getString("neck_front"));
+                                                                        reqInfo.put("neck back", result.getString("neck_back"));
+                                                                        reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                                        reqInfo.put("thigh around", result.getString("thigh_around"));
+                                                                        reqInfo.put("knee around", result.getString("knee_around"));
+                                                                        reqInfo.put("above around waist", result.getString("above_around_waist"));
+                                                                    });
+                                                                }
+                                                                else {
+
+                                                                    getParentFragmentManager().setFragmentResultListener("Blouse", this, (requestKey, result) -> {
+                                                                        reqInfo.put("blouse length", result.getString("blouse_length"));
+                                                                        reqInfo.put("armhole", result.getString("armhole"));
+                                                                        reqInfo.put("lower bust", result.getString("lower_bust"));
+                                                                        reqInfo.put("bust", result.getString("bust"));
+                                                                        reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                                        reqInfo.put("neck front", result.getString("neck_front"));
+                                                                        reqInfo.put("neck back", result.getString("neck_back"));
+                                                                        reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                                        reqInfo.put("sleeve width", result.getString("sleeve_width"));
+
+                                                                    });
+
+                                                                }*/
                                                                 df3.set(reqInfo);
+
+
+
                                                             })
                                                             .addOnFailureListener(e -> {
 
@@ -456,6 +534,136 @@ public class CreateReqFragment extends Fragment {
                                             reqInfo.put("inseam", Objects.requireNonNull(inseam.getText()).toString());
                                             reqInfo.put("outSeam", Objects.requireNonNull(outSeam.getText()).toString());
                                             */
+
+                                            // 24/09/2022
+                                            /*
+                                            if(spinnerItems.getSelectedItem().toString().equals("Shirt (Short sleeve)")){
+
+                                                getParentFragmentManager().setFragmentResultListener("ShirtSS", this, (requestKey, result) -> {
+                                                    reqInfo.put("neck", result.getString("neck"));
+                                                    reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                    reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                    reqInfo.put("chest", result.getString("chest"));
+                                                    reqInfo.put("waist", result.getString("waist"));
+                                                    reqInfo.put("shirt length", result.getString("shirt_length"));
+                                                    reqInfo.put("armhole", result.getString("armhole"));
+                                                    reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                });
+
+                                            }
+                                            if(spinnerItems.getSelectedItem().toString().equals("Shirt (Long sleeve)")){
+
+                                                getParentFragmentManager().setFragmentResultListener("ShirtLS", this, (requestKey, result) -> {
+                                                    reqInfo.put("neck", result.getString("neck"));
+                                                    reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                    reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                    reqInfo.put("chest", result.getString("chest"));
+                                                    reqInfo.put("waist", result.getString("waist"));
+                                                    reqInfo.put("shirt length", result.getString("shirt_length"));
+                                                    reqInfo.put("wrist", result.getString("wrist"));
+                                                    reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                    reqInfo.put("bicep around", result.getString("bicep_around"));
+                                                });
+
+                                            }
+                                            if(spinnerItems.getSelectedItem().toString().equals("T-shirt (Short sleeve)")){
+
+                                                getParentFragmentManager().setFragmentResultListener("TShirtSS", this, (requestKey, result) -> {
+                                                    reqInfo.put("neck", result.getString("neck"));
+                                                    reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                    reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                    reqInfo.put("chest", result.getString("chest"));
+                                                    reqInfo.put("waist", result.getString("waist"));
+                                                    reqInfo.put("t-shirt length", result.getString("tShirt_length"));
+                                                    reqInfo.put("armhole", result.getString("armhole"));
+                                                    reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                });
+
+                                            }
+
+                                            if(spinnerItems.getSelectedItem().toString().equals("T-shirt (Long sleeve)")){
+
+                                                getParentFragmentManager().setFragmentResultListener("TShirtLS", this, (requestKey, result) -> {
+                                                    reqInfo.put("neck", result.getString("neck"));
+                                                    reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                    reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                    reqInfo.put("chest", result.getString("chest"));
+                                                    reqInfo.put("waist", result.getString("waist"));
+                                                    reqInfo.put("t-shirt length", result.getString("tShirt_length"));
+                                                    reqInfo.put("armhole", result.getString("armhole"));
+                                                    reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                });
+
+                                            }
+
+                                            if(spinnerItems.getSelectedItem().toString().equals("Pants")){
+
+                                                getParentFragmentManager().setFragmentResultListener("Pants", this, (requestKey, result) -> {
+                                                    reqInfo.put("hip", result.getString("hip"));
+                                                    reqInfo.put("waist", result.getString("waist"));
+                                                    reqInfo.put("crotch length", result.getString("crotch_length"));
+                                                    reqInfo.put("inseam", result.getString("in_seam"));
+                                                    reqInfo.put("outseam", result.getString("out_seam"));
+                                                    reqInfo.put("thigh around", result.getString("thigh_around"));
+                                                    reqInfo.put("bottom", result.getString("bottom"));
+                                                    reqInfo.put("knee around", result.getString("knee_around"));
+                                                    reqInfo.put("calf", result.getString("calf"));
+
+                                                });
+
+                                            }
+                                            if(spinnerItems.getSelectedItem().toString().equals("Shorts")){
+
+                                                getParentFragmentManager().setFragmentResultListener("Shorts", this, (requestKey, result) -> {
+                                                    reqInfo.put("hip", result.getString("hip"));
+                                                    reqInfo.put("waist", result.getString("waist"));
+                                                    reqInfo.put("crotch length", result.getString("crotch_length"));
+                                                    reqInfo.put("thigh around", result.getString("thigh_around"));
+                                                    reqInfo.put("shorts length", result.getString("shorts_length"));
+                                                    reqInfo.put("leg opening", result.getString("leg_opening"));
+
+                                                });
+
+                                            }
+                                            if(spinnerItems.getSelectedItem().toString().equals("Salwar")){
+
+                                                getParentFragmentManager().setFragmentResultListener("Salwar", this, (requestKey, result) -> {
+
+                                                    reqInfo.put("hip", result.getString("hip"));
+                                                    reqInfo.put("waist", result.getString("waist"));
+                                                    reqInfo.put("calf", result.getString("calf"));
+                                                    reqInfo.put("bust", result.getString("bust"));
+                                                    reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                    reqInfo.put("salwar length", result.getString("salwar_length"));
+                                                    reqInfo.put("kameez length", result.getString("kameez_length"));
+                                                    reqInfo.put("bottom", result.getString("bottom"));
+                                                    reqInfo.put("neck front", result.getString("neck_front"));
+                                                    reqInfo.put("neck back", result.getString("neck_back"));
+                                                    reqInfo.put("sleeve width", result.getString("sleeve_width"));
+                                                    reqInfo.put("thigh around", result.getString("thigh_around"));
+                                                    reqInfo.put("knee around", result.getString("knee_around"));
+                                                    reqInfo.put("above around waist", result.getString("above_around_waist"));
+                                                });
+                                            }
+                                            if(spinnerItems.getSelectedItem().toString().equals("Blouse")){
+
+                                                getParentFragmentManager().setFragmentResultListener("Blouse", this, (requestKey, result) -> {
+                                                    reqInfo.put("blouse length", result.getString("blouse_length"));
+                                                    reqInfo.put("armhole", result.getString("armhole"));
+                                                    reqInfo.put("lower bust", result.getString("lower_bust"));
+                                                    reqInfo.put("bust", result.getString("bust"));
+                                                    reqInfo.put("shoulder length", result.getString("shoulder_length"));
+                                                    reqInfo.put("neck front", result.getString("neck_front"));
+                                                    reqInfo.put("neck back", result.getString("neck_back"));
+                                                    reqInfo.put("sleeve length", result.getString("sleeve_length"));
+                                                    reqInfo.put("sleeve width", result.getString("sleeve_width"));
+
+                                                });
+
+                                            }
+
+                                             */
+
                                             reqInfo.put("reqAccepted",false);
                                             reqInfo.put("created",Timestamp.now());
 
@@ -474,6 +682,7 @@ public class CreateReqFragment extends Fragment {
 
         return v;
     }
+
 
     // check validity of fields while clicking on place request button
     public boolean checkValidity(){
@@ -540,4 +749,5 @@ public class CreateReqFragment extends Fragment {
         fragmentTransaction.replace(R.id.fragmentContainerBodyMeasurements, fragment);
         fragmentTransaction.commit();
     }
+
 }

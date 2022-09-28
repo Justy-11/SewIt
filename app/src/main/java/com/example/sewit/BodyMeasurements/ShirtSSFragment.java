@@ -94,17 +94,22 @@ public class ShirtSSFragment extends Fragment {
             }
             else{
 
+
+                //CreateReqFragment createReqFragment = new CreateReqFragment();
+
                 Bundle bundle = new Bundle();
                 bundle.putString("neck", String.valueOf(neck.getText()));
                 bundle.putString("waist", String.valueOf(waist.getText()));
                 bundle.putString("shoulder_length", String.valueOf(shoulder_length.getText()));
-                bundle.putString("bust", String.valueOf(bust.getText()));
+                bundle.putString("chest", String.valueOf(bust.getText()));
                 bundle.putString("sleeve_length", String.valueOf(sleeve_length.getText()));
                 bundle.putString("shirt_length", String.valueOf(shirt_length.getText()));
                 bundle.putString("armhole", String.valueOf(armhole.getText()));
                 bundle.putString("sleeve_width", String.valueOf(sleeve_width.getText()));
 
-                getParentFragmentManager().setFragmentResult("ShirtSS",bundle);
+                //createReqFragment.setArguments(bundle);
+                requireActivity().getSupportFragmentManager().setFragmentResult("ShirtSS",bundle);
+                //getParentFragmentManager().setFragmentResult("ShirtSS",bundle);
 
                 Toast.makeText(getContext(),"Saved", Toast.LENGTH_SHORT).show();
 

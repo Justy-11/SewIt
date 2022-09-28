@@ -98,7 +98,7 @@ public class TshirtLSFragment extends Fragment {
                 bundle.putString("neck", String.valueOf(neck.getText()));
                 bundle.putString("waist", String.valueOf(waist.getText()));
                 bundle.putString("shoulder_length", String.valueOf(shoulder_length.getText()));
-                bundle.putString("bust", String.valueOf(bust.getText()));
+                bundle.putString("chest", String.valueOf(bust.getText()));
                 bundle.putString("sleeve_length", String.valueOf(sleeve_length.getText()));
                 bundle.putString("tShirt_length", String.valueOf(tShirt_length.getText()));
                 bundle.putString("armhole", String.valueOf(armhole.getText()));
