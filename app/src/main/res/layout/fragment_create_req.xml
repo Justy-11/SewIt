@@ -553,7 +553,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <FrameLayout
+        <!--<FrameLayout
             android:id="@+id/fragmentContainerBodyMeasurements"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -561,7 +561,551 @@
             android:layout_marginEnd="24dp"
             app:layout_constraintStart_toStartOf="@id/inseamTIL"
             app:layout_constraintEnd_toEndOf="@+id/outSeamTIL"
-            app:layout_constraintTop_toBottomOf="@id/inseamTIL" />
+            app:layout_constraintTop_toBottomOf="@id/inseamTIL" />-->
+
+        <GridLayout
+            android:id="@+id/gridLayoutMeasurements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/inseamTIL"
+            android:layout_margin="32dp"
+            android:rowCount="28"
+            android:columnCount="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/NeckTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/neck"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Neck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/BlouseLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/blouse_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/BlouseLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ArmholeTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/arm_hole"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Armhole"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/LowerBustTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/lower_bust"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/LowerBust"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/BustTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/chest"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Bust"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ShoulderLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/shoulder_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ShoulderLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/NeckFrontTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/front_neck_depth"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/NeckFront"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/NeckBackTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/back_neck_depth"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/NeckBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SleeveLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/sleeve_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SleeveLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SleeveWidthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/sleeve_width"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SleeveWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/HipTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/hip"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Hip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/WaistTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/waist"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Waist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/CrotchLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/crotch_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/CrotchLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/InseamTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/inseam"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Inseam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/OutSeamTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/out_seam"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/OutSeam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ThighAroundTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/thigh_around"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ThighAround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/BottomTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/bottom"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/KneeAroundTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/knee_around"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/KneeAround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/CalfTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/calf"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Calf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SalwarLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/salwar_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SalwarLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/KameezLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/kameez_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/KameezLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/AroundAboveWaistTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/around_above_waist"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/AroundAboveWaist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ShirtLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/shirt_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ShirtLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/WristTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/wrist"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Wrist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/BicepAroundTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/bicep_around"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/BicepAround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ShortLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/short_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ShortLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/LegOpeningTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/leg_opening"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/LegOpening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TShirtLengthTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:hint="@string/tShirt_length"
+                app:boxStrokeColor="@color/teal_200"
+                app:hintTextColor="@color/hintGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TShirtLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </GridLayout>
 
         <Button
             android:id="@+id/placeReqBtn"
@@ -575,7 +1119,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/outSeamTIL"
             app:layout_constraintStart_toStartOf="@+id/inseamTIL"
-            app:layout_constraintTop_toBottomOf="@id/fragmentContainerBodyMeasurements" />
+            app:layout_constraintTop_toBottomOf="@id/gridLayoutMeasurements"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
