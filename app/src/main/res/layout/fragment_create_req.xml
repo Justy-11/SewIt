@@ -259,7 +259,7 @@
             app:layout_constraintStart_toStartOf="@+id/SamplePhoto"
             app:layout_constraintTop_toBottomOf="@+id/SamplePhoto" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/neckTIL"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
@@ -551,7 +551,7 @@
                 android:gravity="top"
                 android:inputType="numberDecimal" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <!--<FrameLayout
             android:id="@+id/fragmentContainerBodyMeasurements"
@@ -567,7 +567,7 @@
             android:id="@+id/gridLayoutMeasurements"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/inseamTIL"
+            app:layout_constraintTop_toBottomOf="@id/tvAddMeasurements"
             android:layout_margin="32dp"
             android:rowCount="28"
             android:columnCount="1">
@@ -1117,8 +1117,8 @@
             android:text="@string/place_request"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/outSeamTIL"
-            app:layout_constraintStart_toStartOf="@+id/inseamTIL"
+            app:layout_constraintEnd_toEndOf="@+id/gridLayoutMeasurements"
+            app:layout_constraintStart_toStartOf="@+id/gridLayoutMeasurements"
             app:layout_constraintTop_toBottomOf="@id/gridLayoutMeasurements"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
