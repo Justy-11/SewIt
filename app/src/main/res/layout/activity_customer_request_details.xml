@@ -1195,16 +1195,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLatTIL"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="60dp"
             android:hint="@string/lat"
             app:boxStrokeColor="@color/teal_200"
             app:hintTextColor="@color/hintGrey"
-            app:layout_constraintEnd_toEndOf="@+id/tvPrice"
-            app:layout_constraintStart_toStartOf="@+id/tvPrice"
+            app:layout_constraintEnd_toEndOf="@+id/gridLayoutMeasurements"
+            app:layout_constraintStart_toStartOf="@+id/gridLayoutMeasurements"
             app:layout_constraintTop_toBottomOf="@+id/tvPrice">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -1221,11 +1219,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLngTIL"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="60dp"
             android:hint="@string/lng"
             app:boxStrokeColor="@color/teal_200"
             app:hintTextColor="@color/hintGrey"
@@ -1246,7 +1242,7 @@
 
         <Button
             android:id="@+id/btnAddLocationAddress"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:padding="8dp"
@@ -1254,12 +1250,13 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/tvPrice"
+            app:layout_constraintStart_toStartOf="@+id/inputLngTIL"
+            app:layout_constraintEnd_toEndOf="@id/inputLngTIL"
             app:layout_constraintTop_toBottomOf="@+id/inputLngTIL" />
 
         <Button
             android:id="@+id/btnAccept"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:background="@drawable/btn_bg"
@@ -1270,7 +1267,8 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/btnAddLocationAddress"
-            app:layout_constraintStart_toStartOf="@id/btnAddLocationAddress"/>
+            app:layout_constraintStart_toStartOf="@id/btnAddLocationAddress"
+            app:layout_constraintEnd_toEndOf="@id/btnAddLocationAddress"/>
 
 
         <TextView
