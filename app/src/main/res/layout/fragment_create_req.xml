@@ -1119,7 +1119,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/gridLayoutMeasurements"
             app:layout_constraintStart_toStartOf="@+id/gridLayoutMeasurements"
-            app:layout_constraintTop_toBottomOf="@id/gridLayoutMeasurements"/>
+            app:layout_constraintTop_toBottomOf="@id/gridLayoutMeasurements"
+            tools:ignore="TooManyViews" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

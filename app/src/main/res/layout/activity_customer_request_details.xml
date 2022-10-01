@@ -1247,9 +1247,8 @@
             android:layout_marginTop="12dp"
             android:padding="8dp"
             android:text="@string/add_location"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/inputLngTIL"
             app:layout_constraintEnd_toEndOf="@id/inputLngTIL"
             app:layout_constraintTop_toBottomOf="@+id/inputLngTIL" />
@@ -1261,11 +1260,9 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/btn_bg"
             android:padding="8dp"
-            android:textAllCaps="false"
-            android:fontFamily="@font/lato_italic_regular"
+            android:textAllCaps="true"
             android:text="@string/place_order"
             android:textColor="@color/white"
-            android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/btnAddLocationAddress"
             app:layout_constraintStart_toStartOf="@id/btnAddLocationAddress"
             app:layout_constraintEnd_toEndOf="@id/btnAddLocationAddress"/>

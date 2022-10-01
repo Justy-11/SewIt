@@ -28,7 +28,6 @@
         android:hint="@string/neck"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toStartOf="@+id/inputShoulderTIL"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -55,7 +54,6 @@
         android:hint="@string/shoulder_length"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/inputNeckTIL"
@@ -80,7 +78,6 @@
         android:hint="@string/sleeve_length"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintTop_toBottomOf="@+id/inputNeckTIL"
         app:layout_constraintStart_toStartOf="@+id/inputNeckTIL"
         app:layout_constraintEnd_toEndOf="@+id/inputNeckTIL">
@@ -104,7 +101,6 @@
         android:hint="@string/chest"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputShoulderTIL"
         app:layout_constraintStart_toStartOf="@id/inputShoulderTIL"
         app:layout_constraintTop_toBottomOf="@id/inputShoulderTIL">
@@ -128,7 +124,6 @@
         android:hint="@string/waist"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputSleeveTIL"
         app:layout_constraintStart_toStartOf="@id/inputSleeveTIL"
         app:layout_constraintTop_toBottomOf="@id/inputSleeveTIL">
@@ -152,7 +147,6 @@
         android:hint="@string/hip"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputChestTIL"
         app:layout_constraintStart_toStartOf="@id/inputChestTIL"
         app:layout_constraintTop_toBottomOf="@id/inputChestTIL">
@@ -176,7 +170,6 @@
         android:hint="@string/center_back"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputWaistTIL"
         app:layout_constraintStart_toStartOf="@id/inputWaistTIL"
         app:layout_constraintTop_toBottomOf="@id/inputWaistTIL">
@@ -200,7 +193,6 @@
         android:hint="@string/crotch_length"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputHipTIL"
         app:layout_constraintStart_toStartOf="@id/inputHipTIL"
         app:layout_constraintTop_toBottomOf="@id/inputHipTIL">
@@ -224,7 +216,6 @@
         android:hint="@string/calf"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputCenterBackTIL"
         app:layout_constraintStart_toStartOf="@id/inputCenterBackTIL"
         app:layout_constraintTop_toBottomOf="@id/inputCenterBackTIL">
@@ -248,7 +239,6 @@
         android:hint="@string/wrist"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputCrotchLengthTIL"
         app:layout_constraintStart_toStartOf="@id/inputCrotchLengthTIL"
         app:layout_constraintTop_toBottomOf="@id/inputCrotchLengthTIL">
@@ -272,7 +262,6 @@
         android:hint="@string/inseam"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputCalfTIL"
         app:layout_constraintStart_toStartOf="@id/inputCalfTIL"
         app:layout_constraintTop_toBottomOf="@id/inputCalfTIL">
@@ -296,7 +285,6 @@
         android:hint="@string/out_seam"
         app:boxStrokeColor="@color/teal_200"
         app:hintTextColor="@color/hintGrey"
-        android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@id/inputWristTIL"
         app:layout_constraintStart_toStartOf="@id/inputWristTIL"
         app:layout_constraintTop_toBottomOf="@id/inputWristTIL">
