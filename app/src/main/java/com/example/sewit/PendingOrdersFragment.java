@@ -66,6 +66,10 @@ public class PendingOrdersFragment extends Fragment implements FinishedOrderAdap
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         EventChangeListener();
+        //01/10/2022
+        if(progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
 
         return v;
     }

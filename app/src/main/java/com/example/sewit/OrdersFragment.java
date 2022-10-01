@@ -84,6 +84,10 @@ public class OrdersFragment extends Fragment implements TailorOrderAdapter.onCar
 
         //default
         EventChangeListenerFilterDist(String.valueOf(distanceMax.getText()));
+        //01/10/2022
+        if(progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
 
         filterBtn.setOnClickListener(v1 -> {
             //radio button logic

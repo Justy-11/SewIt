@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             if(valid){
                 fAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(authResult -> {
 
-                    /* TODO: email verification - this should be uncommented after testing is done
+                    //TODO: email verification - this should be uncommented after testing is done
                     if(fAuth.getCurrentUser().isEmailVerified()){
                         Toast.makeText(LoginActivity.this,"Login successful", Toast.LENGTH_SHORT).show();
                         checkUserAccessLevel(authResult.getUser().getUid());
@@ -61,11 +61,10 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this,"Please verify your email", Toast.LENGTH_SHORT).show();
                     }
 
-                    */
 
-                    //TODO - this should be deleted after testing is done
+                    /*//TODO - this should be deleted after testing is done
                     Toast.makeText(LoginActivity.this,"Login successful", Toast.LENGTH_SHORT).show();
-                    checkUserAccessLevel(authResult.getUser().getUid());
+                    checkUserAccessLevel(authResult.getUser().getUid());*/
 
                 }).addOnFailureListener(e -> Toast.makeText(LoginActivity.this,"Login failed, Please check your credentials", Toast.LENGTH_SHORT).show());
 
@@ -156,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
 
-        //TODO - this should be deleted after testing is done
+        /*//TODO - this should be deleted after testing is done
         if(FirebaseAuth.getInstance().getCurrentUser() != null){
             DocumentReference df = FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
             df.get().addOnSuccessListener(documentSnapshot -> {
@@ -173,9 +172,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                 finish();
             });
-        }
+        }*/
 
-        /* TODO: email verification - this should be uncommented after testing is done
+        //TODO: email verification - this should be uncommented after testing is done
         if(FirebaseAuth.getInstance().getCurrentUser() != null && fAuth.getCurrentUser().isEmailVerified()){
             DocumentReference df = FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
             df.get().addOnSuccessListener(documentSnapshot -> {
@@ -194,7 +193,6 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
 
-         */
 
         if(progressDialog.isShowing()){
             progressDialog.dismiss();

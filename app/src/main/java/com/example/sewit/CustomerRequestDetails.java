@@ -571,14 +571,15 @@ public class CustomerRequestDetails extends AppCompatActivity {
 
                 Toast.makeText(CustomerRequestDetails.this,"Order placed", Toast.LENGTH_SHORT).show();
 
-                //send order notification to tailor - 13/7/2022
+                //commented on 01/10/2022
+                /*//send order notification to tailor - 13/7/2022
                 fStore.collection("Tokens").document(tailorName.getText().toString() +"sewIt")
                         .get()
                         .addOnSuccessListener(snapshot -> {
                             String token = snapshot.getString("token");
                             sendFCM.pushNotification(this,token, "Order","New order from " + customerName.getText().toString()
                             ,"OrdersFragment");
-                        });
+                        });*/
 
                 FirebaseUser user = fAuth.getCurrentUser();
                 assert user != null;
@@ -917,6 +918,14 @@ public class CustomerRequestDetails extends AppCompatActivity {
                 Toast.makeText(CustomerRequestDetails.this, "Location is required", Toast.LENGTH_SHORT).show();
             }
 
+            //send order notification to tailor - 01/10/2022
+            fStore.collection("Tokens").document(tailorName.getText().toString() +"sewIt")
+                    .get()
+                    .addOnSuccessListener(snapshot -> {
+                        String token = snapshot.getString("token");
+                        sendFCM.pushNotification(this,token, "Order","New order from " + customerName.getText().toString()
+                                ,"OrdersFragment");
+                    });
 
         });
     }

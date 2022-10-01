@@ -68,7 +68,48 @@ public class RegisterActivity extends AppCompatActivity {
 
             if(valid){
 
-                //check username uniqueness added on 12/7/2022
+                //01/10/2022
+                fAuth.createUserWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnCompleteListener(task -> {
+
+                    if(task.isSuccessful()){
+
+                        assert fAuth.getCurrentUser() != null;
+                        fAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(task1 -> {
+
+                            if(task1.isSuccessful()){
+                                Toast.makeText(RegisterActivity.this,"Account created successfully, check your email to verify your account", Toast.LENGTH_LONG).show();
+                                DocumentReference df = fStore.collection("Users").document(fAuth.getCurrentUser().getUid());
+                                Map<String,Object> userInfo = new HashMap<>();
+                                userInfo.put("UserName",userName.getText().toString());
+                                userInfo.put("Email",email.getText().toString());
+                                userInfo.put("PhoneNumber",phone.getText().toString());
+
+                                // Tailor or Customer
+                                if(isTailorBox.isChecked()){
+                                    userInfo.put("isTailor","1");
+                                    // for tailor rating
+                                    int rating = 0;
+                                    userInfo.put("rating",rating);
+                                }
+                                if(isCustomerBox.isChecked()){
+                                    userInfo.put("isCustomer","1");
+                                }
+
+                                df.set(userInfo);
+                                //startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+
+                            }else{
+                                Toast.makeText(RegisterActivity.this, Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                    }else{
+                        Toast.makeText(RegisterActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
+                });
+
+                /*//TODO: check username uniqueness added on 12/7/2022 - change this (not working when there are no Users collection)
                 fStore.collection("Users").whereEqualTo("UserName",userName.getText().toString())
                         .get().addOnSuccessListener(queryDocumentSnapshots -> {
                     if(queryDocumentSnapshots.size() > 0){
@@ -117,7 +158,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                         });
                     }
-                });
+                });*/
 
             }
 

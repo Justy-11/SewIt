@@ -57,6 +57,10 @@ public class OrderStatusFragment extends Fragment implements OrderStatusAdapter.
         recyclerView.setAdapter(orderStatusAdapter);
 
         EventChangeListener();
+        //01/10/2022
+        if(progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
 
         return v;
     }
