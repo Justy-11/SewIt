@@ -554,7 +554,7 @@ public class TailorRequestsDetails extends AppCompatActivity {
                 //if image is not attached
                 Toast.makeText(TailorRequestsDetails.this,"Request accepted", Toast.LENGTH_SHORT).show();
 
-                //send notification to customer - 13/7/2022  - not on api 24 ??
+                /*//send notification to customer - 13/7/2022  - not on api 24 ??
                 fStore.collection("Tokens").document(name.getText().toString() +"sewIt")
                         .get()
                         .addOnSuccessListener(snapshot -> {
@@ -563,7 +563,7 @@ public class TailorRequestsDetails extends AppCompatActivity {
                                     + " has accepted the request for " + item.getText().toString()
                                     + " (Request Id : " + reqId.getText().toString() +")"
                             ,"AcceptedReqFragment");
-                        });
+                        });*/
 
                 FirebaseUser user = fAuth.getCurrentUser();
                 assert user != null;
@@ -883,6 +883,17 @@ public class TailorRequestsDetails extends AppCompatActivity {
                                 df.set(reqInfo);
                             }
 
+                        });
+
+                //send notification to customer - 13/7/2022  - not on api 24 ??
+                fStore.collection("Tokens").document(name.getText().toString() +"sewIt")
+                        .get()
+                        .addOnSuccessListener(snapshot -> {
+                            String token = snapshot.getString("token");
+                            sendFCM.pushNotification(this,token, "Request accepted", to.getText().toString()
+                                            + " has accepted the request for " + item.getText().toString()
+                                            + " (Request Id : " + reqId.getText().toString() +")"
+                                    ,"AcceptedReqFragment");
                         });
 
             }
