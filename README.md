@@ -1,6 +1,8 @@
 # SewIt - compare and select the best nearby tailor for your order
 * Native android application - Android with Java
 
+<!-- Images -->
+
 ### Features
 * 2 users - Tailors, Customers
 * Customers can place orders to nearby tailors
@@ -13,8 +15,8 @@
 ### To build this project, NEED
 * Firebase: Authentication, Firetore, Storage, and Cloud messaging
 * Google maps API key
-* add google_maps_api.xml file with the google maps api key
-* add local.properties file with your sdk location
+  * add google_maps_api.xml file with the google maps api key
+* local.properties file with your sdk location
 
 ### Future works
 * automate the process - take the body measurements by captured image of a customer
