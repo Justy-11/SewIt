@@ -2,6 +2,7 @@
 * Native android application - Android with Java
 
 <!-- Images -->
+<img src="app_ss/Login.png" width="140" > <img src="app_ss/register.png" width="140" > <img src="app_ss/ForgoPass.png" width="140" >
 
 ### Features
 * 2 users - Tailors, Customers
