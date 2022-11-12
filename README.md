@@ -2,7 +2,13 @@
 * Native android application - Android with Java
 
 <!-- Images -->
-<img src="app_ss/Login.png" width="140" > <img src="app_ss/register.png" width="140" > <img src="app_ss/ForgotPass.png" width="140" >
+<img src="app_ss/Login.png" width="140" > <img src="app_ss/register.png" width="140" > <img src="app_ss/ForgotPass.png" width="140" ><img src="app_ss/LocAlert.png" width="140" >
+<img src="app_ss/CustomerCreateReqTop.png" width="140" ><img src="app_ss/CustomerSpinner.png" width="140" ><img src="app_ss/CustomerCreateReqMiddle.png" width="140" ><img src="app_ss/CustomerCreateReqBottom.png" width="140" >
+<img src="app_ss/CustomerAcceptedReq.png" width="140" ><img src="app_ss/CustomerAcceptedReqDetTop.png" width="140" ><img src="app_ss/CustomerAcceptedReqDetBottom2.png" width="140" >
+<img src="app_ss/CustomerMore.png" width="140" ><img src="app_ss/CustLocUpdate.png" width="140" ><img src="app_ss/CustomerOrderStatusFini.png" width="140" >
+<img src="app_ss/CustomerRating.png" width="140" ><img src="app_ss/CustomerswipeDelete.png" width="140" ><img src="app_ss/TailorNewOrder.png" width="140" >
+<img src="app_ss/TailorNewOrderSwipe.png" width="140" ><img src="app_ss/TailorFinishedOrderSwipe.png" width="140" ><img src="app_ss/ReqNotifi.png" width="140" >
+<img src="app_ss/OrderNotifi.png" width="140" >
 
 ### Features
 * 2 users - Tailors, Customers
